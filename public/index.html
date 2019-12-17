@@ -11,16 +11,26 @@
 <body>
   <h1>Currency Converter</h1>
   <div id="app">
+    <div class="euros">
     <label for="euros">Euros:</label>
-    <input id="euros" placeholder="Amount in Euros" type="text" v-model.number="userAmount">
+    <input id="euros" placeholder="Amount in Euros" type="number" v-model.number="userAmount">
     <label for="select-currency">Select a Currency:</label>
       <select  id="select-currency" v-model="selectedCurrency">
         <option disabled value="">Select a currency</option>
         <option v-for="(value, name) in exchangeRates.rates" :value="value">{{name}}</option>
       </select>
     <h3>{{currencyExchange}}</h3>
-
-
+    </div>
+    <div class="other-currency">
+    <label for="select-new-currency">Select a currency:</label>
+      <select id="select-new-currency" v-model="newSelectedCurrency">
+        <option disabled value="">Select a currency</option>
+        <option v-for="(value, name) in exchangeRates.rates" :value="value">{{name}}</option>
+      </select>
+      <label for="amount">Amount:</label>
+      <input id="amount" placeholder="Amount" type="number" v-model.number="newAmount">
+      <h3>{{exchangeToEuros}} Euros</h3>
+    </div>
   </div>
 </body>
 </html>

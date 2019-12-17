@@ -10,13 +10,23 @@ document.addEventListener("DOMContentLoaded", () => {
         date: ""
       },
       userAmount: null,
-      selectedCurrency: null
+      selectedCurrency: null,
+      newSelectedCurrency: 0,
+      newAmount: 0
     },
 
     computed: {
       currencyExchange: function(){
         let answer = this.userAmount * this.selectedCurrency
         return answer.toFixed(2)
+      },
+      exchangeToEuros: function(){
+        let answer = this.newAmount / this.newSelectedCurrency
+        if (isNaN(answer)){
+          return 0;
+        } else {
+          return answer.toFixed(2);
+        }
       }
     },
 

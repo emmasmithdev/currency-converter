@@ -1,0 +1,17 @@
+body {
+  font-size: 25px;
+}
+input {
+  padding: 5px;
+}
+select {
+  padding: 5px;
+}
+.euros {
+  background-color: lightblue;
+  padding: 20px;
+}
+.other-currency {
+  background-color: lightpink;
+  padding: 20px;
+}
